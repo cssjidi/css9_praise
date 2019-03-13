@@ -1,0 +1,67 @@
+{template 'common/header'}
+
+<div class="main">
+	<form action="" method="post" class="form-horizontal form" id="setting-form">
+		<div class="panel panel-default">
+			<div class="panel-heading">夸夸号设置</div>
+			<div class="panel-body">
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 col-lg-2 control-label">心情</label>
+					<div class="col-sm-8">
+						<div class="checkbox">
+							<label>
+						<input type="checkbox" name="emotion" class="" value="{$settings['emotion']}" />
+						每天只能夸一种心情
+						</label>
+						</div>
+						<div>
+							开启后每天只能限定一种心情，用户再次输入将无法夸夸
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-xs-12 col-sm-3 col-md-2 col-lg-2 control-label">夸夸次数</label>
+					<div class="col-sm-8">
+						<input type="number" name="total" class="form-control" value="{$settings['total']}" value="10"/>
+						<div>
+							夸夸次数过后将不再回复夸夸内容
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</div>
+
+<script>
+require(['jquery', 'util'], function($, util){
+	$(function(){
+		$('#setting-form').submit(function(){
+			var result = true;
+			if($('input[name="data[name]"]').val() == ''){
+				result = false;
+				util.message('未填写便利店名称.');
+			}
+			if($('input[name="data[logo]"]').val() == ''){
+				result = false;
+				util.message('未填加便利店LOGO.');
+			}
+			if($('input[name="data[linkman]"]').val() == ''){
+				result = false;
+				util.message('未填写便利店联系人.');
+			}
+			if($('input[name="data[phone]"]').val() == ''){
+				result = false;
+				util.message('未填写便利店联系电话.');
+			}
+			if($('input[name="data[address]"]').val() == ''){
+				result = false;
+				util.message('未填写便利店地址.');
+			}
+			return result;
+		});
+	});
+});
+</script>
+
+{template 'common/footer'}
