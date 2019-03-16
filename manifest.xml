@@ -3,7 +3,7 @@
 	<application setting="true">
 		<name><![CDATA[夸夸号]]></name>
 		<identifie><![CDATA[css9_praise]]></identifie>
-		<version><![CDATA[1.0.1]]></version>
+		<version><![CDATA[1.0.2]]></version>
 		<type><![CDATA[business]]></type>
 		<ability><![CDATA[夸夸号]]></ability>
 		<description><![CDATA[夸夸号.]]></description>
@@ -43,7 +43,8 @@
 	<bindings>
 		<menu>
             <entry title="夸夸标签" do="tag" />
-            <entry title="夸夸内容" do="content" />
+            <entry title="添加内容" do="content" />
+            <entry title="内容列表" do="list" />
         </menu>
 		<rule>
 			<entry title="规则" do="rule" state="" direct="false" />
