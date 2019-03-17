@@ -103,10 +103,12 @@ require(['jquery', 'util'], function($, util){
 				util.message('内容不能为空');
 				return false;
 			}
+			/*
 			if(tags.length === 0){
 				util.message('标签不能为空');
 				return false;
 			}
+			*/
 			$.ajax({
 				url:'{php echo $this->createWebUrl("addContent");}',
 				data:{
